@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from Git
-                git ''
+                git 'https://github.com/Ayanrtr/Newrepo.git''
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    def dockerImage = docker.build("your-docker-image:latest")
+                    def dockerImage = docker.build("New:latest")
                 }
             }
         }
