@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        // Define options if needed
+        // Example: timeout(time: 1, unit: 'HOURS')
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code from Git
-                git 'https://github.com/Ayanrtr/Newrepo.git''
+                // Checkout the source code from Git using Pipeline SCM
+                checkout scm
             }
         }
 
@@ -13,7 +18,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    def dockerImage = docker.build("New:latest")
+                    def dockerImage = docker.build("your-docker-image:latest")
                 }
             }
         }
